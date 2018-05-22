@@ -1,7 +1,7 @@
 # Keras_sample
 kerasの練習したり、tensorflowの練習をしてしてみたり。などなど
 
-#動作確認環境
+#動作確認環境  
 ■ mac  
 conda       :4.3.14  
 python      :3.5.4  
