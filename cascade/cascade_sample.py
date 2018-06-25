@@ -24,8 +24,8 @@ output_path = "./outputs/" + image_file
 
 #ファイル読み込み
 image = cv2.imread(image_path)
-cv2.imshow("loadimg",image)
 # load 確認
+# cv2.imshow("loadimg",image)
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
 #グレースケール変換
