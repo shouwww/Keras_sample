@@ -21,7 +21,8 @@ def resize_add_space(inputim):
         new_img[:, start:fin] = tmp
     else:
         new_img[start:fin, :] = tmp
-    return new_img
+    ret_im = cv2.resize(new_img,(256,256))
+    return ret_im
 # End def
 
 cascade_path = "models/haarcascade_frontalface_default.xml"
@@ -48,14 +49,14 @@ while True:
     facerect = cascade.detectMultiScale(im_gray, scaleFactor=1.1, minNeighbors=2, minSize=(30,30))   
     color = (255, 255, 255) #白
     cv2.imshow('CamCap', im_org)
-    cv2.moveWindow('CamCap', 0, 0)
+    # cv2.moveWindow('CamCap', 0, 0)
     # 検出した場合
     if len(facerect) > 0:
         #検出した顔を囲む矩形の作成
         for rect in facerect:
             cv2.rectangle(im_re, tuple(rect[0:2]),tuple(rect[0:2]+rect[2:4]), color, thickness=2)
         cv2.imshow('RGB2GBR',im_re)
-        cv2.moveWindow('RGB2GBR', 640, 0)        
+        # cv2.moveWindow('RGB2GBR', 640, 0)        
     else:
         print("not found faces")
     key =cv2.waitKey(10)
